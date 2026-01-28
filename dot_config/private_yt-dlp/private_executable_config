@@ -1,0 +1,23 @@
+[tiktok]
+# Output structure
+-o "%(uploader)s/%(uploader)s-%(upload_date>%Y-%m-%d)s-%(autonumber)02d.%(ext)s"
+
+
+
+# Disable sidecar files
+--no-write-info-json
+--no-write-thumbnail
+--no-write-subs
+
+# Resilience
+--ignore-errors
+--retries 10
+--fragment-retries 10
+--concurrent-fragments 6
+
+# Output hygiene
+--merge-output-format mp4
+--restrict-filenames
+
+# Progress
+--progress

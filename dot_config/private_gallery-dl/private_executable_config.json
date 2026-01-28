@@ -1,0 +1,14 @@
+{
+    "extractor": {
+        "tiktok": {
+            "filename": "{user}${date:%Y-%m-%d}{id}.mp4",
+            "filter": "extension == 'mp4'",
+            "postprocessors": [
+                {
+                    "name": "exec",
+                    "command": "ffmpeg -y -i {} -c:v copy -an {}.muted.mp4 && mv {}.muted.mp4 {}"
+                }
+            ]
+        }
+    }
+}
